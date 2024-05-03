@@ -6,7 +6,7 @@ import { List_Product } from 'src/app/contracts/list_product';
 import { AlertifyMessageType, AlertifyService } from 'src/app/services/admin/alertify.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
 import { SpinnerType, ToastrComponent } from 'src/app/services/common/toastr/toastr.component';
-
+declare var $:any
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -40,6 +40,8 @@ export class ListComponent extends ToastrComponent implements OnInit {
     await this.getProducts();
   }
 
-  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate'];
+  displayedColumns: string[] = ['name', 'stock', 'price', 'createdDate', 'updatedDate', 'update', 'delete'];
   dataSource :MatTableDataSource<List_Product> = null;
+
+  
 }
